@@ -13,4 +13,4 @@ npm i -g expo-cli
 
 - Na pasta do projeto execute ```npm i``` para instalar as dependencias do mesmo
 - Após finalizado a instalação inicie o projeto com ```expo start```
-- Irá aparecer um QR Code, instale o [ExpoGo](https://nodejs.org/en/) em seu celular, escaneie o QR Code e tudo estará pronto para o desenvolvimento
+- Irá aparecer um QR Code, instale o [ExpoGo](https://expo.io/client) em seu celular, escaneie o QR Code e tudo estará pronto para o desenvolvimento
