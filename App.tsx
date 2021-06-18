@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import AppLoading from 'expo-app-loading';
 import Login from './src/screens/login';
+import UserType from './src/screens/user-type';
+import Register from './src/screens/register';
 import * as Font from 'expo-font';
 import 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
@@ -37,6 +39,20 @@ export default function App() {
           }}
           name="Login" 
           component={Login} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="UserType" 
+          component={UserType} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="Register" 
+          component={Register} 
         />
       </Stack.Navigator>
     </NavigationContainer>

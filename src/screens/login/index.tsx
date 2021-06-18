@@ -44,7 +44,7 @@ export default function Login(){
         </View>
       </Content>
       <Footer style={styles.footer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate('UserType')}>
           <Text style={{color:'#A04FE5', fontSize:18}}>Novo por aqui? Cadastre-se</Text>
         </TouchableOpacity>
       </Footer>
