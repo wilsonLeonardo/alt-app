@@ -9,7 +9,7 @@ interface Params {
 }
 export default function Register(){
   const { params } = useRoute()
-  const { goBack, navigate } = useNavigation()
+  const { goBack } = useNavigation()
 
   return (
     <Container style={styles.container}>
@@ -75,13 +75,7 @@ export default function Register(){
         </View>
       </Content>
       <Footer style={{backgroundColor: 'white', borderTopWidth: 0}}>
-          <Button 
-            onPress={() => {
-              if((params as Params)?.type == 'Mercado'){
-                return navigate('HomeMercado')
-              }
-            }}
-            style={styles.buttonFooter} >
+          <Button style={styles.buttonFooter}>
             <Text style={styles.buttonText}> Cadastrar </Text>
           </Button>
       </Footer>

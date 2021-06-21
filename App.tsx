@@ -3,6 +3,7 @@ import AppLoading from 'expo-app-loading';
 import Login from './src/screens/login';
 import UserType from './src/screens/user-type';
 import Register from './src/screens/register';
+import HomeMercado from './src/screens/home-mercado';
 import * as Font from 'expo-font';
 import 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
@@ -53,6 +54,13 @@ export default function App() {
           }}
           name="Register" 
           component={Register} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="HomeMercado" 
+          component={HomeMercado} 
         />
       </Stack.Navigator>
     </NavigationContainer>
