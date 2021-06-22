@@ -3,6 +3,9 @@ import AppLoading from 'expo-app-loading';
 import Login from './src/screens/login';
 import UserType from './src/screens/user-type';
 import Register from './src/screens/register';
+import HomeClient from './src/screens/home-clients';
+import HomeMarket from './src/screens/home-market';
+import Product from './src/screens/product';
 import * as Font from 'expo-font';
 import 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
@@ -53,6 +56,27 @@ export default function App() {
           }}
           name="Register" 
           component={Register} 
+        />
+         <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="HomeClient" 
+          component={HomeClient} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="HomeMarket" 
+          component={HomeMarket} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="Product" 
+          component={Product} 
         />
       </Stack.Navigator>
     </NavigationContainer>
