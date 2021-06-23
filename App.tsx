@@ -6,6 +6,8 @@ import Register from './src/screens/register';
 import HomeClient from './src/screens/home-clients';
 import HomeMarket from './src/screens/home-market';
 import Product from './src/screens/product';
+import Receitas from './src/screens/receitas';
+import Menu from './src/screens/menu';
 import * as Font from 'expo-font';
 import 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
@@ -77,6 +79,20 @@ export default function App() {
           }}
           name="Product" 
           component={Product} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="Receitas" 
+          component={Receitas} 
+        />
+        <Stack.Screen 
+          options={{
+            headerShown: false
+          }}
+          name="Menu" 
+          component={Menu} 
         />
       </Stack.Navigator>
     </NavigationContainer>
