@@ -17,7 +17,11 @@ export default function HomeClient(){
         <Body style={{flex: 2}}>
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
-        <Right style={{flex: 1}}/>
+        <Right style={{flex: 1}}>
+          <TouchableOpacity onPress={() => {navigate('Menu')}}>
+            <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
+          </TouchableOpacity>
+        </Right>
       </Header>
       <Content contentContainerStyle={styles.content}>
         <Text style={styles.title}>
@@ -61,24 +65,30 @@ export default function HomeClient(){
         </Text>
         <View style={{ alignItems: 'center', justifyContent: 'center',flexDirection: 'row'}}>
           <View style={styles.product}>
-            <Image source={require('../../../assets/arroz.jpg')} style={styles.imgProduct}/>
-            <View style={styles.line}></View>
-            <Text style={styles.productName}>Arroz</Text>
-            <Text style={styles.price}>R$ 4,99</Text>
+            <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Arroz', productValue:'R$ 2,99', imgNum:0, oldPrice:'R$ 4,99' })}}>
+              <Image source={require('../../../assets/arroz.jpg')} style={styles.imgProduct}/>
+              <View style={styles.line}></View>
+              <Text style={styles.productName}>Arroz</Text>
+              <Text style={styles.price}>R$ 4,99</Text>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.product}>
-            <Image source={require('../../../assets/feijao.jpg')} style={styles.imgProduct}/>
-            <View style={styles.line}></View>
-            <Text style={styles.productName}>Feijão</Text>
-            <Text style={styles.price}>R$ 3,90</Text>
+            <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Feijão', productValue:'R$ 3,90', imgNum:1, oldPrice:'R$ 6,90' })}}>
+              <Image source={require('../../../assets/feijao.jpg')} style={styles.imgProduct}/>
+              <View style={styles.line}></View>
+              <Text style={styles.productName}>Feijão</Text>
+              <Text style={styles.price}>R$ 3,90</Text>
+            </TouchableOpacity>
           </View> 
 
           <View style={styles.product}>
-            <Image source={require('../../../assets/bolacha.jpg')} style={styles.imgProduct}/>
-            <View style={styles.line}></View>
-            <Text style={styles.productName}>Bolacha</Text>
-            <Text style={styles.price}>R$ 2,79</Text>
+            <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Bolacha', productValue:'R$ 0,89', imgNum:2, oldPrice:'R$ 1,99' })}}>
+              <Image source={require('../../../assets/bolacha.jpg')} style={styles.imgProduct}/>
+              <View style={styles.line}></View>
+              <Text style={styles.productName}>Bolacha</Text>
+              <Text style={styles.price}>R$ 2,79</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Content>

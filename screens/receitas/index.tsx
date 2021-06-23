@@ -45,42 +45,7 @@ export default function Product(){
           </TouchableOpacity>
         </Right>
       </Header>
-      <Content contentContainerStyle={styles.content}>
-        <View style={styles.titleBackground}>
-          <Text style={styles.title}>
-            VENCE EM 5 DIAS
-          </Text>
-          <Text style={styles.subtitle}>
-            30/06/2021
-          </Text>
-        </View>
-        <Text style={styles.title}>
-          {`${(params as Params)?.productName}`}
-        </Text>
-        <Image source={products[num]} style={styles.imgProduct}/>
-        <View style={styles.product}>
-          <View>
-            <Text style={[styles.productName, {textDecorationLine: 'line-through'}]}>De: {`${(params as Params)?.oldPrice}`}</Text>
-            <Text style={styles.productName}>Por:</Text>
-          </View>
-          <Text style={styles.price}>{`${(params as Params)?.productValue}`}</Text>
-         
-          <View style={styles.market}>
-            <Image source={require('../../../assets/carrefour.png')} style={styles.img}/>
-            <View style={styles.marketInside}>
-              <Text style={styles.marketName}>
-                Carrefour - Bairro Campolim
-              </Text>
-              <Text>
-                ☆ 3,0 - 0,4 km de distância
-              </Text>
-            </View>
-          </View>
-          <View style={styles.backgroundRota}>
-            <Text style={styles.rota}>Ver rota</Text>
-          </View>
-        </View>
-      </Content>
+      
     </Container>
   )
 }

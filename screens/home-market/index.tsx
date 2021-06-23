@@ -17,8 +17,13 @@ export default function HomeMarket(){
         <Body style={{flex: 2}}>
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
-        <Right style={{flex: 1}}/>
+        <Right style={{flex: 1}}>
+          <TouchableOpacity onPress={() => {navigate('Menu')}}>
+            <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
+          </TouchableOpacity>
+        </Right>
       </Header>
+      
       <Content contentContainerStyle={styles.content}>
         <Text style={styles.title}>
             Meus Produtos
