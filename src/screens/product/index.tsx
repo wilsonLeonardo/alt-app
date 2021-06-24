@@ -7,14 +7,15 @@ import { useRoute, useNavigation } from '@react-navigation/native'
 interface Params {
   productValue: string,
   productName: string,
-  imgNum: Int8Array,
-  oldPrice: string
+  imgNum: number,
+  oldPrice: string,
+  type: string
 }
 
 export default function Product(){
   const { navigate, goBack } = useNavigation()
   const { params } = useRoute()
-  const num = `${(params as Params)?.imgNum}`
+  const num = (params as Params)?.imgNum
   const products = [
     require('../../../assets/arroz.jpg'),
     require('../../../assets/feijao.jpg'),
@@ -27,7 +28,6 @@ export default function Product(){
     require('../../../assets/sabonete.jpg'),
   ]; 
 
-  //`${(params as Params)?.imgURL}`
   return (
     <Container style={styles.container}>
       <Header style={styles.header} iosBarStyle="dark-content">
@@ -64,21 +64,26 @@ export default function Product(){
             <Text style={styles.productName}>Por:</Text>
           </View>
           <Text style={styles.price}>{`${(params as Params)?.productValue}`}</Text>
-         
-          <View style={styles.market}>
-            <Image source={require('../../../assets/carrefour.png')} style={styles.img}/>
-            <View style={styles.marketInside}>
-              <Text style={styles.marketName}>
-                Carrefour - Bairro Campolim
-              </Text>
-              <Text>
-                ☆ 3,0 - 0,4 km de distância
-              </Text>
-            </View>
-          </View>
-          <View style={styles.backgroundRota}>
-            <Text style={styles.rota}>Ver rota</Text>
-          </View>
+         {
+           (params as Params)?.type != 'mercado' && (
+             <>
+              <View style={styles.market}>
+                <Image source={require('../../../assets/carrefour.png')} style={styles.img}/>
+                <View style={styles.marketInside}>
+                  <Text style={styles.marketName}>
+                    Carrefour - Bairro Campolim
+                  </Text>
+                  <Text>
+                    ☆ 3,0 - 0,4 km de distância
+                  </Text>
+                </View>
+              </View>
+              <View style={styles.backgroundRota}>
+                <Text style={styles.rota}>Ver rota</Text>
+              </View>
+             </>
+           )
+         }
         </View>
       </Content>
     </Container>

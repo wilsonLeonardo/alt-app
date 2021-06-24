@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 import { Container, Content, Button, Footer, Header, Left, Icon, Body } from 'native-base'
-import { Text, View, Image,  StatusBar, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, Image,  StatusBar, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
 
 interface Params {
@@ -9,7 +9,14 @@ interface Params {
 }
 export default function Register(){
   const { params } = useRoute()
-  const { goBack } = useNavigation()
+  const { goBack, navigate } = useNavigation()
+
+  function register(){
+    const type = (params as Params)?.type
+    if(type == 'ONG') navigate('ONG')
+    else if(type == 'Mercado') navigate('HomeMarket')
+    else if(type == 'Cliente') navigate('HomeClient')
+  }
 
   return (
     <Container style={styles.container}>
@@ -75,7 +82,7 @@ export default function Register(){
         </View>
       </Content>
       <Footer style={{backgroundColor: 'white', borderTopWidth: 0}}>
-          <Button style={styles.buttonFooter}>
+          <Button style={styles.buttonFooter} onPress={register}>
             <Text style={styles.buttonText}> Cadastrar </Text>
           </Button>
       </Footer>

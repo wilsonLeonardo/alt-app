@@ -31,7 +31,7 @@ export default function HomeMarket(){
         <View style={styles.row}>
           <View style={{ alignItems: 'center', justifyContent: 'center',flexDirection: 'row'}}>
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Arroz', productValue:'R$ 2,99', imgNum:0, oldPrice:'R$ 4,99' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Arroz', productValue:'R$ 2,99', imgNum:0, oldPrice:'R$ 4,99' })}}>
                 <Image source={require('../../../assets/arroz.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Arroz</Text>
@@ -40,7 +40,7 @@ export default function HomeMarket(){
             </View>
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Feijão', productValue:'R$ 3,90', imgNum:1, oldPrice:'R$ 6,90' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Feijão', productValue:'R$ 3,90', imgNum:1, oldPrice:'R$ 6,90' })}}>
                 <Image source={require('../../../assets/feijao.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Feijão</Text>
@@ -49,7 +49,7 @@ export default function HomeMarket(){
             </View> 
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Bolacha', productValue:'R$ 0,89', imgNum:2, oldPrice:'R$ 1,99' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Bolacha', productValue:'R$ 0,89', imgNum:2, oldPrice:'R$ 1,99' })}}>
                 <Image source={require('../../../assets/bolacha.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Bolacha</Text>
@@ -61,7 +61,7 @@ export default function HomeMarket(){
         <View style={styles.row}>
           <View style={{ alignItems: 'center', justifyContent: 'center',flexDirection: 'row'}}>
             <View style={styles.product}>
-            <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Nescau', productValue:'R$ 4,29', imgNum:3, oldPrice:'R$ 7,90' })}}>
+            <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Nescau', productValue:'R$ 4,29', imgNum:3, oldPrice:'R$ 7,90' })}}>
                 <Image source={require('../../../assets/nescau.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Nescau</Text>
@@ -70,7 +70,7 @@ export default function HomeMarket(){
             </View>
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Ketchup', productValue:'R$ 6,90', imgNum:4, oldPrice:'R$ 9,99' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Ketchup', productValue:'R$ 6,90', imgNum:4, oldPrice:'R$ 9,99' })}}>
                 <Image source={require('../../../assets/ketchup.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Ketchup</Text>
@@ -79,7 +79,7 @@ export default function HomeMarket(){
             </View> 
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Macarrão', productValue:'R$ 4,89', imgNum:5, oldPrice:'R$ 8,89' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Macarrão', productValue:'R$ 4,89', imgNum:5, oldPrice:'R$ 8,89' })}}>
                 <Image source={require('../../../assets/macarrao.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Macarrão</Text>
@@ -91,7 +91,7 @@ export default function HomeMarket(){
         <View style={styles.row}>
           <View style={{ alignItems: 'center', justifyContent: 'center',flexDirection: 'row'}}>
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Ovos', productValue:'R$ 9,99', imgNum:6, oldPrice:'R$ 14,99' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Ovos', productValue:'R$ 9,99', imgNum:6, oldPrice:'R$ 14,99' })}}>
                 <Image source={require('../../../assets/ovos.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Ovos</Text>
@@ -100,7 +100,7 @@ export default function HomeMarket(){
             </View>
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Presunto', productValue:'R$ 5,10', imgNum:7, oldPrice:'R$ 10,99' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Presunto', productValue:'R$ 5,10', imgNum:7, oldPrice:'R$ 10,99' })}}>
                 <Image source={require('../../../assets/presunto.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Presunto</Text>
@@ -109,7 +109,7 @@ export default function HomeMarket(){
             </View> 
 
             <View style={styles.product}>
-              <TouchableOpacity onPress={() => {navigate('Product',  { productName: 'Sabonete', productValue:'R$ 0,79', imgNum:8, oldPrice:'R$ 2,79' })}}>
+              <TouchableOpacity onPress={() => {navigate('Product',  { type: 'mercado', productName: 'Sabonete', productValue:'R$ 0,79', imgNum:8, oldPrice:'R$ 2,79' })}}>
                 <Image source={require('../../../assets/sabonete.jpg')} style={styles.imgProduct}/>
                 <View style={styles.line}></View>
                 <Text style={styles.productName}>Sabonete</Text>

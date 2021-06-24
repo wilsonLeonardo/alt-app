@@ -1,12 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 //Acesse a documentação do native base para maiores detalhes
-import { Body, Container, Content, Footer, Button } from 'native-base'
-import { Text, View, TextInput, Image, StatusBar, TouchableOpacity } from 'react-native';
+import { Container, Content, Footer, Button } from 'native-base'
+import { Text, View, TextInput, Image, StatusBar, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 
 export default function Login(){
   const { navigate } = useNavigation()
+  const [email, setEmail] = useState('')
+
+  function login(){
+    if(email == 'teste@ong.com') navigate('ONG')
+    else if(email == 'teste@mercado.com') navigate('HomeMarket')
+    else if(email == 'cliente@gmail.com') navigate('HomeClient')
+    else if(email == '') return Alert.alert('Erro', 'Preencha o campo email!')
+    else return Alert.alert('Erro', 'Não foi encontrado o usuário informado!') 
+  }
+
   return (
     <Container style={styles.container}>
       <Content contentContainerStyle={styles.content}>
@@ -16,6 +26,8 @@ export default function Login(){
           <View style={styles.inputView}>
             <Text>Email</Text>
             <TextInput 
+              value={email}
+              onChangeText={text => setEmail(text)}
               autoCapitalize='none'
               style={styles.textInput}/>
           </View>
@@ -35,10 +47,10 @@ export default function Login(){
           </TouchableOpacity>
         </View>
         <View style={styles.viewButton}>
-          <Button style={styles.button}>
+          <Button style={styles.button} onPress={login}>
             <Text style={styles.buttonText}> Login </Text>
           </Button>
-          <Button style={[styles.button, {backgroundColor:'#4267B2'}]}>
+          <Button style={[styles.button, {backgroundColor:'#4267B2'}]} onPress={() => navigate('HomeMarket')}>
             <Text style={styles.buttonText}> Continuar com Facebook </Text>
           </Button>
         </View>
