@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 import { Body, Container, Content, Header, Button, Left, Right, Icon } from 'native-base'
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native'
+import Menu from '../menu'
 
 interface Params {
   productValue: string,
@@ -15,6 +16,11 @@ interface Params {
 export default function Product(){
   const { navigate, goBack } = useNavigation()
   const { params } = useRoute()
+  const [visible, setVisible] = useState(false)
+
+  function toggleMenu(){
+    setVisible(!visible);
+  }
   const num = (params as Params)?.imgNum
   const products = [
     require('../../../assets/arroz.jpg'),
@@ -40,11 +46,12 @@ export default function Product(){
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
         <Right style={{flex: 1}}>
-          <TouchableOpacity onPress={() => {navigate('Menu')}}>
+          <TouchableOpacity onPress={toggleMenu}>
             <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
           </TouchableOpacity>
         </Right>
       </Header>
+      <Menu visible={visible} type={ (params as Params)?.type }/>
       <Content contentContainerStyle={styles.content}>
         <View style={styles.titleBackground}>
           <Text style={styles.title}>

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 import { Body, Container, Content, Header, Button, Left, Right, Icon } from 'native-base'
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
+import Menu from '../menu'
 
 export default function HomeMarket(){
   const { navigate, goBack } = useNavigation()
+  const [visible, setVisible] = useState(false)
+
+  function toggleMenu(){
+    setVisible(!visible);
+  }
   return (
     <Container style={styles.container}>
       <Header style={styles.header} iosBarStyle="dark-content">
@@ -18,12 +24,12 @@ export default function HomeMarket(){
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
         <Right style={{flex: 1}}>
-          <TouchableOpacity onPress={() => {navigate('Menu')}}>
+          <TouchableOpacity onPress={toggleMenu}>
             <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
           </TouchableOpacity>
         </Right>
       </Header>
-      
+      <Menu visible={visible} type='mercado'/>
       <Content contentContainerStyle={styles.content}>
         <Text style={styles.title}>
             Meus Produtos

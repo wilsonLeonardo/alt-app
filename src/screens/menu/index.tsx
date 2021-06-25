@@ -1,39 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 import { Body, Container, Content, Header, Button, Left, Right, Icon } from 'native-base'
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 
+interface MenuProps {
+  visible: boolean,
+  type?: string
+}
 
+export default function Product({
+  visible,
+  type
+}: MenuProps){
+  const { navigate } = useNavigation()
 
-export default function Product(){
-  const { navigate, goBack } = useNavigation()
+  if(!visible) return null;
 
+  if(type == 'mercado') 
+    return (
+      <Container style={styles.container}>
+        <View style={[styles.menu, {height: 1000, backgroundColor: '#C684FF'}]}>
+          <TouchableOpacity onPress={() => navigate('HomeMarket')}>
+            <Text style={styles.marketName}>Meus produtos</Text>
+          </TouchableOpacity>
+          <View style={styles.line}></View>
+          <Text style={styles.marketName}>Cadastrar produto</Text>
+          <View style={styles.line}></View>
+          <TouchableOpacity onPress={() => navigate('Ong')}>
+            <Text style={styles.marketName}>Saiba como doar</Text>
+          </TouchableOpacity>
+          <View style={styles.line}></View>
+          <TouchableOpacity onPress={() => navigate('Planos')}>
+            <Text style={styles.marketName}>Planos</Text>
+          </TouchableOpacity>
+        </View>
+    </Container>
 
-  //`${(params as Params)?.imgURL}`
+    )
+
   return (
     <Container style={styles.container}>
-      <Header style={styles.header} iosBarStyle="dark-content">
-        <Left style={{flex: 1, alignItems:'center'}}>
-        </Left>
-        <Body style={{flex: 2}}>
-          <Text style={{color:'white', fontSize: 25, fontWeight: 'bold', marginLeft: -40}}>Alt Tech</Text>
-        </Body>
-        <Right style={{flex: 1}}>
-          <TouchableOpacity onPress={() => goBack()}>
-            <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
-          </TouchableOpacity>
-        </Right>
-      </Header>
-      
       <View style={[styles.menu, {height: 1000, backgroundColor: '#C684FF'}]}>
         <Text style={styles.marketName}>Mercados</Text>
         <View style={styles.line}></View>
         <Text style={styles.marketName}>Produtos</Text>
+        {
+          type != 'ONG' && (
+            <>
+            <View style={styles.line}></View>
+            <TouchableOpacity onPress={() => navigate('Ong')}>
+                <Text style={styles.marketName}>Saiba como doar</Text>
+              </TouchableOpacity>
+            </>
+          )
+        }
         <View style={styles.line}></View>
-        <Text style={styles.marketName}>Saiba como doar</Text>
-        <View style={styles.line}></View>
-        <Text style={styles.marketName}>Receitas</Text>
+        <TouchableOpacity onPress={() => navigate('Receitas')}>
+         <Text style={styles.marketName}>Receitas</Text>
+        </TouchableOpacity>
       </View>
     </Container>
   )

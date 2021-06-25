@@ -13,9 +13,9 @@ export default function Register(){
 
   function register(){
     const type = (params as Params)?.type
-    if(type == 'ONG') navigate('ONG')
-    else if(type == 'Mercado') navigate('HomeMarket')
+    if(type == 'Mercado' ) navigate('HomeMarket')
     else if(type == 'Cliente') navigate('HomeClient')
+    else if(type == 'ONG') navigate('HomeClient', { type: 'ONG' })
   }
 
   return (

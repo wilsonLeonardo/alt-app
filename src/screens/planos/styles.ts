@@ -4,11 +4,7 @@ import { StyleSheet } from 'react-native'
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFF',
-    position: 'absolute',
-    width: "100%",
-    zIndex: 5,
-    top: "13%"
+    backgroundColor: '#FFF'
   },
   content: {
     flex: 1,
@@ -51,8 +47,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   marketName: {
-    margin: 5,
-    fontSize: 26,
+    fontSize: 15,
     fontWeight: 'bold',
   },
   market: {
@@ -81,11 +76,10 @@ export const styles = StyleSheet.create({
     height: 210,
   },
   line:{
-    width: 215,
-    marginVertical: 8,
-    borderBottomColor: 'white',
+    marginTop: 5,
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
-    alignSelf: 'center',
+    alignItems: 'flex-start',
   },
   productName:{
     marginTop: 5,
@@ -107,10 +101,11 @@ export const styles = StyleSheet.create({
     backgroundColor:'#ECECEC'
   },
   subtitle:{
-    alignSelf: 'center',
-    color:'#A04FE5',
-    fontWeight: 'bold',
-    marginBottom: 8
+    backgroundColor: "#e2e2e2",
+    marginBottom: 8,
+    width: "100%",
+    height: "15%",
+    justifyContent: "center"
   },
   rota:{
     alignSelf: 'center',
@@ -128,10 +123,5 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: -10,
     marginBottom: 100
-  },
-  menu:{
-    paddingTop: 50,
-    alignItems: 'center',
-    //justifyContent: 'center',
   }
 })

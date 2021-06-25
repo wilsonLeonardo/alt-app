@@ -15,17 +15,7 @@ export default function Product(){
   const { navigate, goBack } = useNavigation()
   const { params } = useRoute()
   const num = `${(params as Params)?.imgNum}`
-  const products = [
-    require('../../../assets/arroz.jpg'),
-    require('../../../assets/feijao.jpg'),
-    require('../../../assets/bolacha.jpg'),
-    require('../../../assets/nescau.jpg'),
-    require('../../../assets/ketchup.jpg'),
-    require('../../../assets/macarrao.jpg'),
-    require('../../../assets/ovos.jpg'),
-    require('../../../assets/presunto.jpg'),
-    require('../../../assets/sabonete.jpg'),
-  ]; 
+  const products = require('../../../assets/ong.jpeg')
 
   //`${(params as Params)?.imgURL}`
   return (
@@ -39,129 +29,118 @@ export default function Product(){
         <Body style={{flex: 2}}>
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
-        <Right style={{flex: 1}}>
-          <TouchableOpacity onPress={() => {navigate('Menu')}}>
-            <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
-          </TouchableOpacity>
-        </Right>
+        <Right style={{flex: 1}}/>
       </Header>
       <View style={styles.subtitle}>
         <View style={{left: 20}}>
-          <Text style={{fontSize: 25, fontWeight: 'bold', color: "#A04FE5"}}>Receitas</Text>
-          <Text style={{fontSize: 15, top: 5}}>Receitas simples e barata para o dia a dia</Text>
+          <Text style={{fontSize: 25, fontWeight: 'bold', color: "#A04FE5"}}>Doação</Text>
+          <Text style={{fontSize: 15, top: 5}}>Para realizar doações entre em contato com algumas das nossas ONG’S parceiras.</Text>
         </View>
       </View>
+      <Text style={{left:20, marginVertical: 10, fontSize: 25, fontWeight: 'bold', color: "#A04FE5"}}>ONG'S</Text>
       <Content>
-        <List>
-          <ListItem>
+        <List >
+          <ListItem >
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[0]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 1</Text>
+                <Text>ONG 1</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[1]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 2</Text>
+                <Text>ONG 2</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[0]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 1</Text>
+                <Text>ONG 1</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[2]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 3</Text>
+                <Text>ONG 3</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[3]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 4</Text>
+                <Text>ONG 4</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[4]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 5</Text>
+                <Text>ONG 5</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[5]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 6</Text>
+                <Text>ONG 6</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>
           <ListItem>
             <Left style={{flex: 0.2}}>
-              <Thumbnail source={products[6]} small/>
+              <Thumbnail source={products} small/>
             </Left>
             <Body style={{alignItems: 'flex-start', flex: 1}}>
               <Title>
-                <Text>Receita 7</Text>
+                <Text>ONG 7</Text>
               </Title>
               <Subtitle>
-                <Text style={{fontWeight: 'bold', color:'black'}}>. 40 minutos</Text>
-                <Text> - Ingrediente 1, ingrediente 2</Text>
+                <Text> • Telefone: (11) 1111-1111</Text>
               </Subtitle>
             </Body>
           </ListItem>

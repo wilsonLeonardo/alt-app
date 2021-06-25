@@ -10,9 +10,9 @@ export default function Login(){
   const [email, setEmail] = useState('')
 
   function login(){
-    if(email == 'teste@ong.com') navigate('ONG')
-    else if(email == 'teste@mercado.com') navigate('HomeMarket')
-    else if(email == 'cliente@gmail.com') navigate('HomeClient')
+    if(email == 'teste@mercado.com') navigate('HomeMarket')
+    else if(email == 'cliente@gmail.com' ) navigate('HomeClient')
+    else if(email == 'teste@ong.com') navigate('HomeClient', { type: 'ONG' })
     else if(email == '') return Alert.alert('Erro', 'Preencha o campo email!')
     else return Alert.alert('Erro', 'Não foi encontrado o usuário informado!') 
   }

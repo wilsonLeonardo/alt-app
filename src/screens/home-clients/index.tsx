@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styles } from './styles'
 import { Body, Container, Content, Header, Button, Left, Right, Icon } from 'native-base'
 import { Text, View, Image, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useRoute } from '@react-navigation/native'
+import Menu from '../menu'
 
+interface Params {
+  type: string
+}
 export default function HomeClient(){
   const { navigate, goBack } = useNavigation()
+  const [visible, setVisible] = useState(false)
+  const { params } = useRoute()
+
+  function toggleMenu(){
+    setVisible(!visible);
+  }
+
   return (
     <Container style={styles.container}>
       <Header style={styles.header} iosBarStyle="dark-content">
@@ -18,11 +29,12 @@ export default function HomeClient(){
           <Text style={{color:'white', fontSize: 25}}>Alt Tech</Text>
         </Body>
         <Right style={{flex: 1}}>
-          <TouchableOpacity onPress={() => {navigate('Menu')}}>
+          <TouchableOpacity onPress={toggleMenu}>
             <Icon name="menu" type='MaterialIcons' style={{color: 'white'}}/>
           </TouchableOpacity>
         </Right>
       </Header>
+      <Menu visible={visible} type={(params as Params)?.type}/>
       <Content contentContainerStyle={styles.content}>
         <Text style={styles.title}>
             Mercados Próximos
